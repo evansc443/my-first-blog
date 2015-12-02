@@ -7,23 +7,13 @@
             <h1><a href="">Evan's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post and my first attempt at creating some form of a web page. It is pretty cool and I'm enjoying whatever the hell this is.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>I look forward to being able to customize the web page more. I also can't wait to stop typing useless bull shit into these fake blog posts. </p>
-        </div>
-
-        <div>
-            <p>publised 01.12.2015, 9:56 PM</p>
-            <h2><a href="">My third post</a></h2>
-            <p>This is my third and final blog post and an attempt at understanding how Html actually works. I hopefully will be able to learn and employ more html commands soon. </p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
 
     </body>
 </html>
